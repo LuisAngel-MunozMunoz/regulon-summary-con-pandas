@@ -6,11 +6,12 @@ VALID_EFFECTS = {"+", "-", "-+"}
 def load_interactions(filename: str) -> pd.DataFrame:
 
     # Leer el archivo, ignorando las líneas que comienzan con '#'
-    df = 
+    df = pd.read_csv(filename, sep="\t", comment= "#")
 
     # Usar nombres TF, gene y effect para las columnas relevantes
     # 2)regulatorName, 5)geneName, 6)function
-    df = 
+    df = pd.rename({"2)regulatorName": "TF", "5)geneName": "gene",
+                    "6)function": "effect"})
 
     # Conservar solo las columnas relevantes
     required_columns = ["TF", "gene", "effect"]
