@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def filter_by_min_genes(regulon: pd.DataFrame, min_genes: int) -> pd.DataFrame:
-    return regulon[regulon["genes"].apply(len) >= min_genes]
+    return regulon[regulon["total_genes"] >= min_genes]
 
 
 def filter_by_type(regulon: pd.DataFrame, regulator_type: str) -> pd.DataFrame:
@@ -18,5 +18,4 @@ def filter_interactions_by_regulon(
 ) -> pd.DataFrame:
     valid_tfs = set(regulon["TF"])
 
-    # Filtacion de interacciones para conservar aquellas cuyo TF esté presente en el regulón filtrado
     return interactions[interactions["TF"].isin(valid_tfs)]
