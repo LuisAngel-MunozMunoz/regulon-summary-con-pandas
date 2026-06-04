@@ -26,12 +26,12 @@ def plot_top_regulators(
     plt.figure(figsize=(10, 5))
 
     # Crear el gráfico de barras
-    plt.bar(top["TF"], top["toltal_genes"], color="golden")
+    plt.bar(top["TF"], top["total_genes"], color="golden")
 
     # Configurar etiquetas de ejes y título
     plt.xlabel("TFS")
     plt.ylabel("Total de genes")
-    plt.title(f"Top{top_n} TFs")
+    plt.title(f"Top {top_n} TFs")
 
     # Rotar las etiquetas del eje x para mejor legibilidad
     plt.xticks(rotation=45, ha="right")
